@@ -12,6 +12,7 @@ const ProductInCart = props => {
             </div>
         )
     }
+    console.log(props.item)
     return (
         <section className="productInCart-section">
             <table className="productInCart-section-table">
@@ -37,9 +38,13 @@ const ProductInCart = props => {
                         <td>
                             <div className="productInCart-section-table__counter">
 
-                                <Button square={"square"}>-</Button>
-                                <div className="productInCart-square">2</div>
-                                <Button square={"square"}>+</Button>
+                                <Button
+                                    onClick={props.onClickMinus}
+                                    square={"square"}>-</Button>
+                                <div className="productInCart-square">{props.quant}</div>
+                                <Button
+                                    onClick={props.onClickAdd}
+                                    square={"square"}>+</Button>
                                 <Button image={"button-image"}
                                     square={"square"}>
 
