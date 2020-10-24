@@ -1,11 +1,12 @@
 import React from 'react';
+import Header from '../components/Header';
 import './CartView.css';
 
 const CartView = (props) => {
     return (
-        <div>
-            <h1>shopping cart will be here</h1>
-        </div>
+        <>
+            <Header />
+        </>
     );
 };
 
