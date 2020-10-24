@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, createContext } from 'react';
 import Header from '../components/Header';
 import headphones from './../images/headphones.png';
 import './CartView.css';
@@ -8,6 +8,10 @@ import { CartContext } from '../context/CartContext';
 
 export const CartView = (props) => {
 
+    // const totalValue = useContext(CartContext);
+    const [subTotal, setSubtotal] = useState(0);
+    const [isShiping, setIsShiping] = useState(0);
+    const [grandTotal, setGrandTotal] = useState(0);
     // render default product
     const [products, setProducts] = useState([]);
     const [quantity, setQuantity] = useState(1);
@@ -41,6 +45,16 @@ export const CartView = (props) => {
         setQuantity(0)
     }
 
+// total Value
+const subtotalValueHandler = () => {
+    setSubtotal(
+            products.unitPrice * quantity
+    )
+}
+console.log(products.unitPrice)
+console.log(quantity)
+console.log(subTotal)
+
     return (
         <>
             <Header />
@@ -51,10 +65,13 @@ export const CartView = (props) => {
                     onClickMinus={minusQuantityHandler}
                     quant={quantity}
                     cancelProducts={clearProductsHandler}
+                    updateSubtotal={subtotalValueHandler}
 
                 >
                 </ProductInCart>
-                <Total />
+                <Total 
+                subtotal={subTotal}
+                />
             </div>
         </>
     );

@@ -27,20 +27,20 @@ const ProductInCart = props => {
                 <tbody>
                     <tr>
                         <td>
-                            <Button 
-                            onClick={props.cancelProducts}
-                            image={"button-image"}
+                            <Button
+                                onClick={props.cancelProducts}
+                                image={"button-image"}
                                 square={"square"}><img className="image" src={x} alt="x sign to remove the product from the cart" /></Button>
                         </td>
-                            {props.item.image ?
-                        <td>
-                            <img className="productInCart-image" src={props.item.image} alt="product`s image headphones" />
-                        </td>
+                        {props.item.image ?
+                            <td>
+                                <img className="productInCart-image" src={props.item.image} alt="product`s image headphones" />
+                            </td>
                             :
                             <td>
-                                
+
                             </td>
-                            }
+                        }
                         <td>{props.item.productName}</td>
                         <td>${props.item.unitPrice}</td>
                         <td>
@@ -53,7 +53,9 @@ const ProductInCart = props => {
                                 <Button
                                     onClick={props.onClickAdd}
                                     square={"square"}>+</Button>
-                                <Button image={"button-image"}
+                                <Button
+                                    onClick={props.updateSubtotal}
+                                    image={"button-image"}
                                     square={"square"}>
 
                                     <img className="productInCart-image" src={pencil} alt="pencil image, click to update shopping cart`s value" />
@@ -64,7 +66,9 @@ const ProductInCart = props => {
                 </tbody>
             </table>
             <div className="productInCart-section-footer">
-                <Button>Update Shopping Cart</Button>
+                <Button
+                    onClick={props.updateSubtotal}
+                >Update Shopping Cart</Button>
             </div>
         </section>
     );
