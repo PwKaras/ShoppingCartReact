@@ -23,12 +23,23 @@ export const CartView = (props) => {
 
     }, [])
     // change products quantity
-    const addQuantity = () => {
+    const addQuantityHandler = () => {
         setQuantity(quantity + 1);
     };
-    const minusQuantity = () => {
-        setQuantity(quantity - 1);
+    const minusQuantityHandler = () => {
+        if(quantity > 0) {
+            setQuantity(quantity - 1);
+        } else {
+            return
+        }
     };
+
+    // clear shoping cart on click
+    const clearProductsHandler = () => {
+        console.log("hello")
+        setProducts({})
+        setQuantity(0)
+    }
 
     return (
         <>
@@ -36,9 +47,10 @@ export const CartView = (props) => {
             <div className="cartView-main">
                 <ProductInCart
                     item={products}
-                    onClickAdd={addQuantity}
-                    onClickMinus={minusQuantity}
+                    onClickAdd={addQuantityHandler}
+                    onClickMinus={minusQuantityHandler}
                     quant={quantity}
+                    cancelProducts={clearProductsHandler}
 
                 >
                 </ProductInCart>
