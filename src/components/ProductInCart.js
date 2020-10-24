@@ -12,7 +12,6 @@ const ProductInCart = props => {
             </div>
         )
     }
-    console.log(props.item)
     return (
         <section className="productInCart-section">
             <table className="productInCart-section-table">
@@ -28,11 +27,20 @@ const ProductInCart = props => {
                 <tbody>
                     <tr>
                         <td>
-                            <Button image={"button-image"}
+                            <Button 
+                            onClick={props.cancelProducts}
+                            image={"button-image"}
                                 square={"square"}><img className="image" src={x} alt="x sign to remove the product from the cart" /></Button>
                         </td>
-                        <td><img className="productInCart-image" src={props.item.image} alt="product`s image headphones" />
+                            {props.item.image ?
+                        <td>
+                            <img className="productInCart-image" src={props.item.image} alt="product`s image headphones" />
                         </td>
+                            :
+                            <td>
+                                
+                            </td>
+                            }
                         <td>{props.item.productName}</td>
                         <td>${props.item.unitPrice}</td>
                         <td>
