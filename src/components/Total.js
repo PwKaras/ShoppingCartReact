@@ -22,7 +22,7 @@ const Total = (props) => {
                 <tbody className="total-aside-table__tbody">
                     <tr>
                         <td>Subtotal</td>
-                        <td>$23.80</td>
+                        <td>${props.subtotal}</td>
                     </tr>
                     <tr>
                         <td>
@@ -33,7 +33,7 @@ const Total = (props) => {
                     <tr>
                         <td colSpan="2">
                             <Button to={'/cart/completed'}>Proceed to checkout</Button>
-                    </td>
+                        </td>
                     </tr>
                 </tbody>
             </table>
