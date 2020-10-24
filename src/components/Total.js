@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button';
 import './Total.css';
 
 const Total = (props) => {
@@ -12,13 +13,13 @@ const Total = (props) => {
                     </tr>
                 </thead>
             </table>
-            <table class="total-aside-table">
-                <thead class="total-aside-table__thead">
+            <table className="total-aside-table">
+                <thead className="total-aside-table__thead">
                     <tr>
                         <th colspan="2">CART TOTALS</th>
                     </tr>
                 </thead>
-                <tbody class="total-aside-table__tbody">
+                <tbody className="total-aside-table__tbody">
                     <tr>
                         <td>Subtotal</td>
                         <td>$23.80</td>
@@ -30,8 +31,8 @@ const Total = (props) => {
                         <td>$23.80</td>
                     </tr>
                     <tr>
-                        <td colspan="2">
-                            <button class="button">Proceed to checkout</button>
+                        <td colSpan="2">
+                            <Button to={'/cart/completed'}>Proceed to checkout</Button>
                     </td>
                     </tr>
                 </tbody>

@@ -1,48 +1,59 @@
 import React from 'react';
 import Button from './Button';
+import x from './../images/x-img.png';
+import pencil from './../images/edit-img.png';
 import './ProductInCart.css';
 
-const ProductInCart = (item) => {
+const ProductInCart = props => {
+    if (!props.item) {
+        return (
+            <div className="center">
+                <h1>no product in cart</h1>
+            </div>
+        )
+    }
     return (
-            <section class="productInCart-section">
-                <table class="productInCart-section-table">
-                    <thead class="productInCart-section-table__thead">
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th>Product Name</th>
-                            <th>Unit Price</th>
-                            <th>Qty</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+        <section className="productInCart-section">
+            <table className="productInCart-section-table">
+                <thead className="productInCart-section-table__thead">
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>Product Name</th>
+                        <th>Unit Price</th>
+                        <th>Qty</th>
+                    </tr>
+                </thead>
+                <tbody>
                     <tr>
                         <td>
-                            <Button className=""><img class="image" src="" alt="x sign to remove the product from the cart"/></Button>
+                            <Button image={"button-image"}
+                                square={"square"}><img className="image" src={x} alt="x sign to remove the product from the cart" /></Button>
                         </td>
-                        <td><img class="image" src="" alt="product`s image headphones"/>
+                        <td><img className="productInCart-image" src={props.item.image} alt="product`s image headphones" />
                         </td>
-                        <td>{item.productName}</td>
-                        <td>$11.90</td>
+                        <td>{props.item.productName}</td>
+                        <td>${props.item.unitPrice}</td>
                         <td>
-                            <div class="section-table__counter">
+                            <div className="productInCart-section-table__counter">
 
-                                <button class="square">-</button>
-                                <div class="square">2</div>
-                                <button class="square">+</button>
-                                <button class="button-image square">
+                                <Button square={"square"}>-</Button>
+                                <div className="productInCart-square">2</div>
+                                <Button square={"square"}>+</Button>
+                                <Button image={"button-image"}
+                                    square={"square"}>
 
-                                    <img class="image" src="images/edit-img.png" alt="pencil image, click to update shopping cart`s value"/>
-                                </button>
+                                    <img className="productInCart-image" src={pencil} alt="pencil image, click to update shopping cart`s value" />
+                                </Button>
                             </div>
                         </td>
                     </tr>
                 </tbody>
-                </table>
-                <div className="productInCart-section-footer">
-                <button class="button">Update Shopping Cart</button>
+            </table>
+            <div className="productInCart-section-footer">
+                <Button>Update Shopping Cart</Button>
             </div>
-            </section>
+        </section>
     );
 };
 

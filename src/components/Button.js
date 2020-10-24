@@ -23,6 +23,7 @@ const Button = (props) => {
             className={
                 `button
                 ${props.image && "button-image"}
+                ${props.square && "button-square"}
                 `
             }
             type={props.type}
