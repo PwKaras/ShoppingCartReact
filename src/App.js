@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import logo from './logo.svg';
 import './App.css';
 import CartView from './views/CartView';
 import CartCompletedView from './views/CartCompletedView';
