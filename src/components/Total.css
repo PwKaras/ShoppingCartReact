@@ -1,0 +1,51 @@
+.total-aside {
+    width: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem;
+    padding: 0rem;
+    align-items: stretch;
+}
+
+
+.total-aside-table {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    margin: 0rem;
+    border-bottom: 1px solid #d9d9d9;
+    border-collapse: collapse;
+    border: 1px solid #d9d9d9;
+    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.75);
+}
+
+.total-aside-table__thead {
+    border: 1px solid #d9d9d9;
+    background-color: #d9d9d9;
+}
+
+.total-aside-table th,
+td {
+    padding: 1rem;
+}
+
+.total-aside-table__tbody td {
+    padding: 1rem 1.5rem;
+    background-color: #ededed;
+}
+
+.total-aside-table__tbody tr td:nth-child(2) {
+font-weight: 700;
+}
+
+.total-aside-table__tbody tr:nth-child(2){
+    font-size: larger;
+}
+
+.total-aside-table tr:first-child {
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.total-aside-table__tbody .button {
+    margin: 0;
+}

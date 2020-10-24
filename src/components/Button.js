@@ -18,6 +18,20 @@ const Button = (props) => {
                 {props.children}
             </Link>
         );
+    return (
+        <button
+            className={
+                `button
+                ${props.image && "button-image"}
+                `
+            }
+            type={props.type}
+            onClick={props.onClick}
+            disabled={props.disabled}
+        >
+            {props.children}
+        </button>
+    )
 };
 
 export default Button;
