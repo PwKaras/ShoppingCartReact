@@ -34,7 +34,7 @@ const ProductInCart = props => {
                         </td>
                         {props.item.image ?
                             <td>
-                                <img className="productInCart-image" src={props.item.image} alt="product`s image headphones" />
+                                <img className="productInCart-image" src={props.item.image} alt="product headphones" />
                             </td>
                             :
                             <td>
@@ -58,7 +58,7 @@ const ProductInCart = props => {
                                     image={"button-image"}
                                     square={"square"}>
 
-                                    <img className="productInCart-image" src={pencil} alt="pencil image, click to update shopping cart`s value" />
+                                    <img className="productInCart-image" src={pencil} alt="pencil, click to update shopping cart`s value" />
                                 </Button>
                             </div>
                         </td>
