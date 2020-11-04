@@ -10,8 +10,9 @@ export const CartView = (props) => {
 
     // const totalValue = useContext(CartContext);
     const [subTotal, setSubtotal] = useState(0);
-    const [isShiping, setIsShiping] = useState(0);
-    const [grandTotal, setGrandTotal] = useState(0);
+    // const [isShipping, setIsShipping] = useState(23.8);
+    // const [grandTotal, setGrandTotal] = useState(0);
+
     // render default product
     const [products, setProducts] = useState([]);
     const [quantity, setQuantity] = useState(1);
@@ -24,14 +25,14 @@ export const CartView = (props) => {
 
     useEffect(() => {
         setProducts(Default_Product[0]);
-
     }, [])
+    
     // change products quantity
     const addQuantityHandler = () => {
         setQuantity(quantity + 1);
     };
     const minusQuantityHandler = () => {
-        if(quantity > 0) {
+        if (quantity > 0) {
             setQuantity(quantity - 1);
         } else {
             return
@@ -40,20 +41,16 @@ export const CartView = (props) => {
 
     // clear shoping cart on click
     const clearProductsHandler = () => {
-        console.log("hello")
-        setProducts({})
-        setQuantity(0)
+        setProducts({});
+        setQuantity(0);
     }
 
-// total Value
-const subtotalValueHandler = () => {
-    setSubtotal(
-            products.unitPrice * quantity
-    )
-}
-console.log(products.unitPrice)
-console.log(quantity)
-console.log(subTotal)
+    // total Value
+    const subtotalValueHandler = () => {
+        setSubtotal(
+            Math.floor(products.unitPrice * quantity)
+        );
+    };
 
     return (
         <>
@@ -69,8 +66,8 @@ console.log(subTotal)
 
                 >
                 </ProductInCart>
-                <Total 
-                subtotal={subTotal}
+                <Total
+                    subtotal={subTotal}
                 />
             </div>
         </>

@@ -2,6 +2,8 @@ import React from 'react';
 import Button from './Button';
 import './Total.css';
 
+let grand
+
 const Total = (props) => {
     return (
         <aside className="total-aside">
@@ -9,14 +11,14 @@ const Total = (props) => {
                 <thead className="total-aside-table__thead">
                     <tr>
                         <th>SHIPPING</th>
-                        <th>$23.80</th>
+                        <th>$ {grand = props.subtotal !== 0 ? (props.subtotal > 100 ? 0 : 23.80) : (0)}</th>
                     </tr>
                 </thead>
             </table>
             <table className="total-aside-table">
                 <thead className="total-aside-table__thead">
                     <tr>
-                        <th colspan="2">CART TOTALS</th>
+                        <th colSpan="2">CART TOTALS</th>
                     </tr>
                 </thead>
                 <tbody className="total-aside-table__tbody">
@@ -28,7 +30,7 @@ const Total = (props) => {
                         <td>
                             Grand total
                         </td>
-                        <td>$23.80</td>
+                        <td>${props.subtotal + grand}</td>
                     </tr>
                     <tr>
                         <td colSpan="2">
